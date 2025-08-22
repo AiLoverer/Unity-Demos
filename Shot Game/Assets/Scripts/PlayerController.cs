@@ -86,8 +86,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // 限定玩家旋转角度
-        playerRotationX = Mathf.Clamp(playerRotationX, -60f, 60f);
-        playerRotationY = Mathf.Clamp(playerRotationY, -90f, 90f);
+        playerRotationX = Mathf.Clamp(playerRotationX, -90f, 30f);
+        //playerRotationY = Mathf.Clamp(playerRotationY, -90f, 90f);
 
         // 上下旋转玩家头部
         playerHead.transform.rotation = Quaternion.Euler(playerRotationX, playerRotationY, 0f);
