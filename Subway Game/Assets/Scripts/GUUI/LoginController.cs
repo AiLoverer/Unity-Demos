@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 登录控制器
@@ -16,7 +17,9 @@ public class LoginController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        registerPanel.SetActive(true);
+        loginPanel.SetActive(false);
+        tipsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,10 +28,29 @@ public class LoginController : MonoBehaviour
         
     }
 
-    public void ShowRegisterPanel()
+    // 显示提示界面
+    public void ShowTipsPanel()
     {
-        // if (tipsPanel!= null)
-        // registerPanel.SetActive(true);
-        // loginPanel.SetActive(false);
+        if (registerPanel!= null)
+            registerPanel.SetActive(false);
+        if (tipsPanel!= null)
+            tipsPanel.SetActive(true);
     }
+
+    // 显示登录界面
+    public void ShowLoginPanel()
+    {
+        if (loginPanel!= null)
+            loginPanel.SetActive(true);
+        if (tipsPanel!= null)
+            tipsPanel.SetActive(false);
+    }
+
+    // 加载主界面
+    public void LoadMainScene()
+    {
+        loginPanel.SetActive(false);
+        SceneManager.LoadScene("Paoku2024");
+    }
+
 }
