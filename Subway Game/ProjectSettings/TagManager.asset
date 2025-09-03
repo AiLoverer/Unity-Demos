@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - CollRoad1
+  - InventoryOnceTipRect
+  - OneceTip
   layers:
   - Default
   - TransparentFX
