@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// 背包指针控制脚本
@@ -27,6 +29,10 @@ public class InventoryPointerController : MonoBehaviour, IPointerEnterHandler, I
         if(InventorySystem.bagOnceTip.activeSelf == false)
             InventorySystem.bagOnceTip.SetActive(true);
         Debug.Log("鼠标移入");
+        // 动态更新bagOnceTip中图片
+        InventorySystem.bagOnceTip.transform.GetChild(1).GetComponent<Image>().sprite = this.transform.GetChild(0).GetComponent<Image>().sprite;
+        // 动态更新bagOnceTip中文字
+        InventorySystem.bagOnceTip.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = this.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text;
     }
 
     // 鼠标移除
