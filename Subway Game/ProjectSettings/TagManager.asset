@@ -8,6 +8,7 @@ TagManager:
   - CollRoad1
   - InventoryOnceTipRect
   - OneceTip
+  - Ground
   layers:
   - Default
   - TransparentFX
