@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using TMPro;
 
 /// <summary>
 /// 视频播放控制类
@@ -16,6 +17,8 @@ public class VideoController : MonoBehaviour
     public VideoClip[] videoClips;
     // 当前播放的视频片段索引
     int currentClipIndex = 0;
+    // 播放按钮文本切换：播放/暂停
+    public GameObject playButton;
 
     // 设置当前播放的视频片段
     public void SetCurrentClip(int index)
@@ -42,6 +45,7 @@ public class VideoController : MonoBehaviour
     {
         videoPlayer.Play();
         isPlaying = true;
+        playButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Pause";
     }
 
     // 暂停视频
@@ -49,6 +53,7 @@ public class VideoController : MonoBehaviour
     {        
         videoPlayer.Pause();
         isPlaying = false;
+        playButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Play";
     }
 
     // 停止视频
